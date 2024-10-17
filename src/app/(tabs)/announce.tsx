@@ -6,7 +6,7 @@ type Props = {}
 const NotificationsScreen = (props: Props) => {
   return (
     <View style={styles.container}>
-      <Text>Notifications Screen</Text>
+      <Text>Anunciar Screen</Text>
     </View>
   )
 }

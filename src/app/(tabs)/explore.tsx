@@ -6,7 +6,7 @@ type Props = {}
 const ExploreScreen = (props: Props) => {
   return (
     <View className='flex-1 justify-center items-center'>
-      <Text>Explore Screen</Text>
+      <Text>Search Screen</Text>
     </View>
   )
 }
