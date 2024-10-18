@@ -1,5 +1,4 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
 import { Link } from "expo-router";
 
 type Props = {};
