@@ -1,49 +1,85 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { Link, router } from 'expo-router'
+import { Text, TouchableOpacity, View } from 'react-native'
+import { router } from 'expo-router'
+
+import { Button } from '../components/buttom'
+import { Input } from '../components/input'
+
+import LogoGoogle from '../../assets/images/google-logo.svg';
+import LogoApple from '../../assets/images/apple-logo.svg';
+import LogoLinkedin from '../../assets/images/linkedin-logo.svg';
 
 type Props = {}
 
 const SignInScreen = (props: Props) => {
   return (
-    <View style={styles.container}>
-      <Text className='text-3xl'>B2Y 2 You </Text>
-      <TextInput className='bg-bg200 h-8 w-80' placeholder='Seu nome'></TextInput>
-      <TextInput className='bg-bg200 h-8 w-80' placeholder='Sua senha'></TextInput>
-      <TouchableOpacity onPress={() => {
-          router.dismissAll();
-          router.push('/(tabs)');
-        }}
-        className="bg-primary100 text-sm h-8 w-80 justify-center items-center rounded-lg"
-      >
-          <Text 
-            className='text-text200'
-          >
-            Entrar
-          </Text>
-        </TouchableOpacity>
-        
-        <View>
-
-        </View>
-        <TouchableOpacity onPress={() => {
-          router.dismissAll();
-          router.push('/signup');
-        }}
-        className="h-8 w-80 justify-center items-center rounded-lg border-solid border-primary100 border"
+    <View className='flex-1 bg-bg100 justify-around items-center'>
+      <Text className='text-3xl font-bold'>B2Y 2 You </Text>
+      <View className='w-80'>
+        <Input 
+          placeholder='Seu nome' 
+          />
+        <Input
+          placeholder='Sua senha' 
+          secureTextEntry={true}
+         />
+        <Button 
+          title='Entrar'  
+          onPress={() => {
+            router.dismissAll();
+            router.push('/(tabs)');
+          }}/>
+      </View>
+      <View className='w-80 h-12 flex-row justify-around'>
+        <TouchableOpacity 
+          className='w-12 h-12 bg-bg200 items-center justify-center rounded-lg'
+          style={{
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5, // Para Android
+          }}
         >
-          <Text>Ir para o cadastro</Text>
+          <LogoGoogle width={24} height={24}/>
         </TouchableOpacity>
+        <TouchableOpacity 
+          className='w-12 h-12 bg-bg200 items-center justify-center rounded-lg'
+          style={{
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5, // Para Android
+          }}
+        >
+          <LogoApple width={24} height={24}/>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          className='w-12 h-12 bg-bg200 items-center justify-center rounded-lg'
+          style={{
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5, // Para Android
+          }}
+        >
+          <LogoLinkedin width={24} height={24}/>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text className='text-text300 text-sm text-center mb-3'>Você tem uma conta? </Text>
+        <Button 
+          variant='SECUNDARY' 
+          title='Ir para o cadastro' 
+          className='w-80' 
+          onPress={() => {
+            router.dismissAll();
+            router.push('/signup');
+          }}/>
+      </View>
     </View>
   )
 }
 
 export default SignInScreen
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
