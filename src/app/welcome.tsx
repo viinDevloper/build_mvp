@@ -12,7 +12,7 @@ const Welcome = () => {
       </View>
 
       {/* Login Button */}
-      <TouchableOpacity className="bg-orange-500 w-[347px] rounded-md py-4 mb-4">
+      <TouchableOpacity className="bg-orange-500 w-[347px] rounded-md py-4 mb-[24px]">
         <Text className="text-white text-center text-lg">Login</Text>
       </TouchableOpacity>
 
