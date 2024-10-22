@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import { Link } from "expo-router";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import {  Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 
