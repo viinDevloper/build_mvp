@@ -25,7 +25,7 @@ const HomeScreen = (props: Props) => {
         </View>
         <View className="mx-3">
           <Ionicons name="notifications-outline" size={36} color="black" />
-          <View className="rounded-full bg-orange-700 items-center w-5 h-5 justify-center absolute top-0"><Text className="text-white">1</Text></View>
+          <View className="rounded-full bg-primary100 items-center w-5 h-5 justify-center absolute top-0 ml-[18px]"><Text className="text-white">1</Text></View>
         </View>
       </SafeAreaView>
 
