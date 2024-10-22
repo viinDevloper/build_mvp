@@ -6,18 +6,20 @@ import { Banner } from "@/src/components/home/banner";
 import { Section } from "@/src/components/home/section";
 import Categories from "@/src/components/home/categories";
 
-type Props = {};
 const StatusBarHeight = Constants.statusBarHeight;
 
-const HomeScreen = (props: Props) => {
+const HomeScreen = () => {
   return (
-    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+    <ScrollView 
+      style={{ flex: 1 }} 
+      showsVerticalScrollIndicator={false}
+    >
       <View className="w-full px-4" style={{ marginTop: StatusBarHeight + 8 }}>
         <Search />
         <Localization />
         <Banner />
-        <Section name="Categorias" size="text-xl"/>
-        <Categories/>
+        <Section name="Categorias" size="text-xl" />
+        <Categories />
       </View>
     </ScrollView>
   );
