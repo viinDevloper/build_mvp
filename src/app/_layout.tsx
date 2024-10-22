@@ -1,37 +1,36 @@
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+import "react-native-reanimated";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+// Impede que a tela de splash seja ocultada antes de carregar os assets.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  const [fontsLoaded] = useFonts({
+    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
   useEffect(() => {
-    if (loaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [fontsLoaded]);
 
-  if (!loaded) {
+  if (!fontsLoaded) {
     return null;
   }
 
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="signin" options={{ presentation: 'modal' }} />
-      <Stack.Screen name="signup" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="signin" options={{ presentation: "modal" }} />
+      <Stack.Screen name="signup" options={{ presentation: "modal" }} />
       <Stack.Screen name="onboarding" options={{ headerShown: true }} />
       <Stack.Screen name="welcome" options={{ headerShown: true }} />
-      <Stack.Screen name="localization" options={{ headerShown: true}}/>
+      <Stack.Screen name="localization" options={{ headerShown: true }} />
       <Stack.Screen name="notifications" options={{ headerShown: true }} />
-
     </Stack>
   );
 }
