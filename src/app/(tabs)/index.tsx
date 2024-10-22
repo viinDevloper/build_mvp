@@ -22,11 +22,11 @@ const HomeScreen = (props: Props) => {
             className="flex-1 h-full bg-transparent"
           />
           <View className="h-18 w-[1.5px] bg-slate-950 rounded-lg mr-[13px]" />
-         <Ionicons name="search-sharp" size={30} color="#020617"/>
+          <Ionicons name="search-sharp" size={30} color="#020617" />
         </View>
         <View className="mx-3">
-        <Ionicons name="notifications-outline" size={30} color="black" />
-        <View />
+          <Ionicons name="notifications-outline" size={36} color="black" />
+          <View className="rounded-full bg-orange-700 items-center w-5 h-5 justify-center absolute top-0"><Text className="text-white">1</Text></View>
         </View>
       </SafeAreaView>
 
