@@ -19,7 +19,7 @@ const HomeScreen = (props: Props) => {
         <View className="flex-row border border-slate-950 h-18 rounded-lg bg-transparent p-3">
           <TextInput
             placeholder={isFocused ? "" : "Buscar"}
-            className="flex-1 h-full bg-transparent text-[14px]"
+            className="flex-1 h-full bg-transparent text-[15px] ml-[12]"
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
@@ -38,6 +38,10 @@ const HomeScreen = (props: Props) => {
           </View>
         </TouchableOpacity>
       </SafeAreaView>
+      <View className="flex flex-row ">
+        <Ionicons name="map"/>
+        <Text>DDD 11 - São Paulo e Região</Text>
+      </View>
     </View>
   );
 };
