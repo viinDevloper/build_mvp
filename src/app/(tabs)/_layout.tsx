@@ -6,7 +6,7 @@ import Octicons from '@expo/vector-icons/Octicons';
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{
-      headerShown: true, 
+      headerShown: false, 
       tabBarStyle: { 
         backgroundColor: '#FF6600', 
         borderTopColor: '#ccc' }, 
