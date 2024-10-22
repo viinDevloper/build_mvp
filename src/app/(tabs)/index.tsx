@@ -1,5 +1,5 @@
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const HomeScreen = (props: Props) => {
         <View className="flex-row border border-slate-950 h-18 rounded-lg bg-transparent p-3">
           <TextInput
             placeholder={isFocused ? "" : "Buscar"}
-            className="flex-1 h-full bg-transparent text-[15px] ml-[12]"
+            className="flex-1 h-full bg-transparent text-[15px] top-1"
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
@@ -39,7 +39,7 @@ const HomeScreen = (props: Props) => {
         </TouchableOpacity>
       </SafeAreaView>
       <View className="flex flex-row ">
-        <Ionicons name="map"/>
+        <FontAwesome5 name="map-marker-alt" size={24} color="#FF6600" />
         <Text>DDD 11 - São Paulo e Região</Text>
       </View>
     </View>
