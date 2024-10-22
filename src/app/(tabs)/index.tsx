@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
+import { router } from "expo-router";
 
 const StatusBarHeight = Constants.statusBarHeight;
 
@@ -16,6 +17,7 @@ const HomeScreen = (props: Props) => {
         className="flex-1 max-w-[80%] items-center flex-row absolute top-0 justify-center"
         style={{ marginTop: StatusBarHeight }}
       >
+        
         <View className="flex-row border border-slate-950 h-18 rounded-lg bg-transparent p-3">
           <TextInput
             placeholder={isFocused ? "" : "Buscar"}
@@ -26,6 +28,7 @@ const HomeScreen = (props: Props) => {
           <View className="h-18 w-[1.5px] bg-slate-950 rounded-lg mr-[13px]" />
           <Ionicons name="search-sharp" size={30} color="#020617" />
         </View>
+       
         <TouchableOpacity
           activeOpacity={0.1}
           onPress={() => console.log("Notificações clicadas!")}
