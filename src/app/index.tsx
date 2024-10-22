@@ -6,21 +6,18 @@ type Props = {};
 const index = (props: Props) => {
   return (
     <View style={styles.container}>
-      <Text>Welcome Screen</Text>
-      <Link href={"/signin"} asChild>
-        <TouchableOpacity>
-          <Text>Go to SignIn Screen</Text>
-        </TouchableOpacity>
+      <Text>Infra de Telas do Projeto</Text>
+      <Link href={"/onboarding"}>
+        <Text>Desenvolver Onboarding</Text>
       </Link>
-      <Link href={"/signup"} asChild>
-        <TouchableOpacity>
-          <Text>Go to SignUp Screen</Text>
-        </TouchableOpacity>
+      <Link href={"/signin"}>
+        <Text>Desenvolver Tela de login</Text>
       </Link>
-      <Link href={"/onboarding"} asChild>
-        <TouchableOpacity>
-          <Text>Go to Onboarding Screen</Text>
-        </TouchableOpacity>
+      <Link href={"/signup"}>
+        <Text>Desenvolver Tela de Cadastro</Text>
+      </Link>
+      <Link href={"/welcome"}>
+        <Text>Desenvolver Tela de Bem vindos</Text>
       </Link>
     </View>
   );
