@@ -24,7 +24,10 @@ const index = (props: Props) => {
       </Link>
 
       <Link href={"/(tabs)"}>
-      <Text className="text-2xl"> Screen Home</Text>
+        <Text className="text-2xl"> Screen Home</Text>
+      </Link>
+      <Link href={'localization'}>
+        <Text className="text-2xl">Screen Localization</Text>
       </Link>
 
     </View>
