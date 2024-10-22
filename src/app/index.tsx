@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 
 type Props = {};
@@ -6,19 +6,27 @@ type Props = {};
 const index = (props: Props) => {
   return (
     <View style={styles.container}>
-      <Text>Infra de Telas do Projeto</Text>
+      <Text className="text-2xl bg-[#FF6600] text-white p-5 rounded-[20px]">Engenharia Front end B2Y Business 2 You</Text>
       <Link href={"/onboarding"}>
-        <Text>Desenvolver Onboarding</Text>
+        <Text className="text-2xl">Screen Onboarding</Text>
       </Link>
+
       <Link href={"/signin"}>
-        <Text>Desenvolver Tela de login</Text>
+        <Text className="text-2xl">Screen login</Text>
       </Link>
+
       <Link href={"/signup"}>
-        <Text>Desenvolver Tela de Cadastro</Text>
+        <Text className="text-2xl">Screen Cadastro</Text>
       </Link>
+
       <Link href={"/welcome"}>
-        <Text>Desenvolver Tela de Bem vindos</Text>
+        <Text className="text-2xl">Screen Bem vindos</Text>
       </Link>
+
+      <Link href={"/(tabs)"}>
+      <Text className="text-2xl"> Screen Home</Text>
+      </Link>
+
     </View>
   );
 };
