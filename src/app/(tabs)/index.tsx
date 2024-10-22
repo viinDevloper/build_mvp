@@ -1,5 +1,4 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import React from "react";
 import { Link } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
@@ -30,19 +29,7 @@ const HomeScreen = (props: Props) => {
         </View>
       </SafeAreaView>
 
-      <Text>Infra de Telas do Projeto</Text>
-      <Link href={"/onboarding"}>
-        <Text>Desenvolver Onboarding</Text>
-      </Link>
-      <Link href={"/signin"}>
-        <Text>Desenvolver Tela de login</Text>
-      </Link>
-      <Link href={"/signup"}>
-        <Text>Desenvolver Tela de Cadastro</Text>
-      </Link>
-      <Link href={"/welcome"}>
-        <Text>Desenvolver Tela de Bem vindos</Text>
-      </Link>
+      
     </View>
   );
 };
