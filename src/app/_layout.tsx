@@ -29,7 +29,7 @@ export default function RootLayout() {
       <Stack.Screen name="signup" options={{ presentation: 'modal' }} />
       <Stack.Screen name="onboarding" options={{ headerShown: true }} />
       <Stack.Screen name="welcome" options={{ headerShown: true }} />
-      <Stack.Screen name="localization" options={{presentation: "modal", headerShown: true}}/>
+      <Stack.Screen name="localization" options={{ headerShown: true}}/>
       <Stack.Screen name="notifications" options={{ headerShown: true }} />
 
     </Stack>

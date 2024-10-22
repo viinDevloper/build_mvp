@@ -1,7 +1,6 @@
 import { Link } from 'expo-router';
 import { Text, View, TextInput, TouchableOpacity, Image, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Animated} from "react-native"
 
 type Props = {}
 
