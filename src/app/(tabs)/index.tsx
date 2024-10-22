@@ -3,7 +3,6 @@ import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
-import { router } from "expo-router";
 
 const StatusBarHeight = Constants.statusBarHeight;
 
