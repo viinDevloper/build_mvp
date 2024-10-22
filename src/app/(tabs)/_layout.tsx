@@ -5,7 +5,6 @@ import Octicons from '@expo/vector-icons/Octicons';
 
 export default function TabLayout() {
   return (
-    // feito por Ju: Estilização da Tab, e dos icons
     <Tabs screenOptions={{
       headerShown: true, 
       tabBarStyle: { 
