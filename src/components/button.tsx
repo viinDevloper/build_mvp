@@ -1,6 +1,6 @@
-import { Pressable, PressableProps, Text } from "react-native";
+import { TouchableOpacityProps, TouchableOpacity, Text } from "react-native";
 
-interface ButtonProps extends PressableProps {
+interface ButtonProps extends TouchableOpacityProps {
   variant?: "PRIMARY" | "SECUNDARY";
   title: string;
 }
@@ -18,11 +18,11 @@ export const Button = ({
     variant === "PRIMARY" ? "text-text200" : "text-primary100";
 
   return (
-    <Pressable
+    <TouchableOpacity
       className={`w-full p-4 rounded-lg justify-center items-center ${buttonStyles}`}
       {...props}
     >
       <Text className={`font-semibold ${textStyles}`}>{title}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };

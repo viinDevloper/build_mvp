@@ -1,5 +1,6 @@
 import { router } from "expo-router";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Button } from "../components/button";
 
 const Welcome = () => {
   return (
@@ -13,20 +14,10 @@ const Welcome = () => {
       </View>
 
       {/* Login Button */}
-      <TouchableOpacity
-        onPress={() => router.push("/signin")}
-        className="bg-orange-500 w-[347px] rounded-md py-4 mb-6"
-      >
-        <Text className="text-white text-center text-lg">Login</Text>
-      </TouchableOpacity>
+      <Button title="Login"/>
 
       {/* Criar Conta Button */}
-      <TouchableOpacity
-        onPress={() => router.push("/signup")}
-        className="border border-orange-500 w-[347px] rounded-md py-4"
-      >
-        <Text className="text-orange-500 text-center text-lg">Criar conta</Text>
-      </TouchableOpacity>
+      <Button title="Criar conta"/>
     </View>
   );
 };
