@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import { Link } from 'expo-router';
-import { Text, View, TextInput, TouchableOpacity, Image, } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context';
-=======
 import { Link } from "expo-router";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
->>>>>>> ff70dbbd2b6b9bc49a00cc782aa4a85db4f5506f
 
 const SignUpScreen = () => {
   return (
@@ -15,7 +9,10 @@ const SignUpScreen = () => {
         <Text className="text-2xl font-bold mb-8">B2Y 2 You</Text>
 
         <View className="w-24 h-24 rounded-full mb-8 items-center justify-center">
-          <Image source={require("../assets/Frame 17.png")} className="w-24 h-24" />
+          <Image
+            source={require("../assets/Frame 17.png")}
+            className="w-24 h-24"
+          />
         </View>
 
         <View className="w-full space-y-4 mb-8">

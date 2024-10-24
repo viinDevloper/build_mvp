@@ -7,16 +7,46 @@ import { Input } from "../components/input";
 import LogoGoogle from "../../assets/images/google-logo.svg";
 import LogoApple from "../../assets/images/apple-logo.svg";
 import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
+import { auth } from "../firebase/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 
 const SignInScreen = () => {
-  const handleLogin = () => {
-    router.dismissAll();
-    router.push("/(tabs)");
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSignup = () => {
-    router.dismissAll();
-    router.push("/signup");
+  // Registrar usuário
+  const handleRegister = async () => {
+    try {
+      router.dismissAll();
+      router.push("/signup");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+    }
+  };
+  // Login do usuário
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log(`Logado como: ${user.email}`);
+      router.dismissAll();
+      router.push("/(tabs)");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+    }
   };
 
   const renderSocialButton = (Logo: React.FC<any>, altText: string) => (
@@ -27,7 +57,7 @@ const SignInScreen = () => {
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5, // Para Android
+        elevation: 5,
       }}
       accessibilityLabel={altText}
     >
@@ -39,8 +69,13 @@ const SignInScreen = () => {
     <View className="flex-1 bg-bg100 justify-around items-center">
       <Text className="text-3xl font-bold">B2Y 2 You</Text>
       <View className="w-80">
-        <Input placeholder="Seu nome" />
-        <Input placeholder="Sua senha" secureTextEntry={true} />
+        <Input placeholder="Seu E-mail" value={email} onChangeText={setEmail} />
+        <Input
+          placeholder="Sua senha"
+          secureTextEntry={true}
+          value={password}
+          onChangeText={setPassword}
+        />
         <Button title="Entrar" onPress={handleLogin} />
       </View>
       <View className="w-80 h-12 flex-row justify-around">
@@ -56,7 +91,7 @@ const SignInScreen = () => {
           variant="SECUNDARY"
           title="Ir para o cadastro"
           className="w-80"
-          onPress={handleSignup}
+          onPress={handleRegister}
         />
       </View>
     </View>
