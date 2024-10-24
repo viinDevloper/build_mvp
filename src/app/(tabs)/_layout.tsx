@@ -1,48 +1,61 @@
-import React from 'react';
 import { Tabs } from "expo-router";
-import { Ionicons } from '@expo/vector-icons';
-import Octicons from '@expo/vector-icons/Octicons';
+import { Ionicons } from "@expo/vector-icons";
+import Octicons from "@expo/vector-icons/Octicons";
 
 export default function TabLayout() {
   return (
-    // feito por Ju: Estilização da Tab, e dos icons
-    <Tabs screenOptions={{
-      headerShown: true, 
-      tabBarStyle: { 
-        backgroundColor: '#FF6600', 
-        borderTopColor: '#ccc' }, 
-        tabBarLabelStyle: { fontSize: 14, color: '#FFFFA1'},
-        }}>
-      <Tabs.Screen name='index' options={{
-        title: 'Inicio',
-        tabBarIcon: ({}) => (
-          <Octicons name='home' size={22} color={'#FFFFA1'} />
-        )
-      }} />
-      <Tabs.Screen name='explore' options={{
-        title: 'Buscar',
-        tabBarIcon: ({}) => (
-          <Ionicons name='search-sharp' size={22} color={'#FFFFA1'} />
-        )
-      }} />
-      <Tabs.Screen name='announce' options={{
-        title: 'Anunciar',
-        tabBarIcon: ({}) => (
-          <Ionicons name='add-circle-outline' size={25} color={'#FFFFA1'} />
-        )
-      }} />
-      <Tabs.Screen name='messagens' options={{
-        title: 'Mensagens',
-        tabBarIcon: ({}) => (
-          <Ionicons name='chatbubbles-sharp' size={22} color={'#FFFFA1'} />
-        )
-      }} />
-      <Tabs.Screen name='menu' options={{
-        title: 'Menu',
-        tabBarIcon: ({}) => (
-          <Ionicons name='menu-outline' size={27} color={'#FFFFA1'} />
-        )
-      }} />
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#FF6600",
+          borderTopColor: "#ccc",
+        },
+        tabBarLabelStyle: {
+          fontSize: 14,
+          color: "#FFF",
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Início",
+          tabBarIcon: () => <Octicons name="home" size={22} color="#FFF" />,
+        }}
+      />
+      <Tabs.Screen
+        name="explore"
+        options={{
+          title: "Buscar",
+          tabBarIcon: () => <Ionicons name="search-sharp" size={22} color="#FFF" />,
+        }}
+      />
+      <Tabs.Screen
+        name="announce"
+        options={{
+          title: "Anunciar",
+          tabBarIcon: () => (
+            <Ionicons name="add-circle-outline" size={25} color="#FFF" />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="messagens"
+        options={{
+          title: "Mensagens",
+          tabBarIcon: () => (
+            <Ionicons name="chatbubbles-sharp" size={22} color="#FFF" />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="menu"
+        options={{
+          title: "Menu",
+          tabBarIcon: () => <Ionicons name="menu-outline" size={27} color="#FFF" />,
+        }}
+      />
     </Tabs>
   );
 }
