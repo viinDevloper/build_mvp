@@ -8,7 +8,7 @@ import LogoGoogle from "../../assets/images/google-logo.svg";
 import LogoApple from "../../assets/images/apple-logo.svg";
 import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
 
-const SignInScreen = () => {
+export default function SignIn () {
   const handleLogin = () => {
     router.dismissAll();
     router.push("/(tabs)");
@@ -63,4 +63,3 @@ const SignInScreen = () => {
   );
 };
 
-export default SignInScreen;

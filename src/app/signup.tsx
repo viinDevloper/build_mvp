@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button } from "../components/button";
 import { Input } from "../components/input";
 
-const SignUpScreen = () => {
+export default function SignUp () {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1 px-6 justify-center items-center">
@@ -36,5 +36,3 @@ const SignUpScreen = () => {
     </SafeAreaView>
   );
 };
-
-export default SignUpScreen;
