@@ -1,11 +1,9 @@
 import { View, Text } from 'react-native'
 
-const Localization = () => {
+export default function Localization () {
   return (
     <View>
       <Text>Localization</Text>
     </View>
   )
 }
-
-export default Localization

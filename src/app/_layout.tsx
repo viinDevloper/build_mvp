@@ -23,20 +23,10 @@ export default function RootLayout() {
   }
 
   return (
-<<<<<<< HEAD
-    <Stack screenOptions={{headerShown: false}}>
+    <Stack screenOptions={{headerShown: true}}>
       <Stack.Screen name="signin" options={{ presentation: 'modal' }} />
       <Stack.Screen name="signup" options={{ presentation: 'modal' }} />
-=======
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="signin" options={{ presentation: "modal" }} />
-      <Stack.Screen name="signup" options={{ presentation: "modal" }} />
-      <Stack.Screen name="onboarding" options={{ headerShown: true }} />
-      <Stack.Screen name="welcome" options={{ headerShown: true }} />
-      <Stack.Screen name="localization" options={{ headerShown: true }} />
-      <Stack.Screen name="notifications" options={{ headerShown: true }} />
->>>>>>> ff70dbbd2b6b9bc49a00cc782aa4a85db4f5506f
+      <Stack.Screen name="localization" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }

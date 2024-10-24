@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 
-import { Button } from "../components/buttom";
+import { Button } from "../components/button";
 import { Input } from "../components/input";
 
 import LogoGoogle from "../../assets/images/google-logo.svg";

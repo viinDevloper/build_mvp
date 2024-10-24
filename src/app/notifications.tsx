@@ -1,11 +1,9 @@
 import { View, Text } from 'react-native'
 
-const Notifications = () => {
+export default function Notifications () {
   return (
     <View>
       <Text>notifications</Text>
     </View>
   )
 }
-
-export default Notifications
