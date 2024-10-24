@@ -1,6 +1,9 @@
 import { Link } from "expo-router";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Button } from "../components/button";
+import { Input } from "../components/input";
+
 
 const SignUpScreen = () => {
   return (
@@ -16,40 +19,23 @@ const SignUpScreen = () => {
         </View>
 
         <View className="w-full space-y-4 mb-8">
-          <TextInput
-            placeholder="Nome"
-            className="w-full border border-gray-300 rounded-lg p-3"
-          />
-          <TextInput
-            placeholder="Seu telefone"
-            className="w-full border border-gray-300 rounded-lg p-3"
-          />
-          <TextInput
-            placeholder="Cpf/Cnpj"
-            className="w-full border border-gray-300 rounded-lg p-3"
-          />
-          <TextInput
-            placeholder="Sua senha"
-            secureTextEntry
-            className="w-full border border-gray-300 rounded-lg p-3"
-          />
-          <TextInput
-            placeholder="Confirme sua senha"
-            secureTextEntry
-            className="w-full border border-gray-300 rounded-lg p-3"
-          />
+          <Input placeholder="Nome"/>
+
+          <Input placeholder="Seu Telefone"/>
+
+          <Input placeholder="Cpf/Cnpj"/>
+
+          <Input placeholder="Sua senha"/>
+
+          <Input placeholder="Confirme sua senha"/>
         </View>
 
-        <TouchableOpacity className="w-full bg-orange-500 rounded-lg p-4 items-center mb-4">
-          <Text className="text-white font-bold">Cadastrar</Text>
-        </TouchableOpacity>
+        <Button title="Cadastrar"/>
 
         <Text className="mb-2">Já tem uma conta?</Text>
-        <TouchableOpacity>
-          <Link href="/signin">
-            <Text className="text-orange-500 font-bold">Ir para o login</Text>
-          </Link>
-        </TouchableOpacity>
+        <Link href="/signin">
+          <Button title="Ir para o login"/>
+        </Link>
       </View>
     </SafeAreaView>
   );

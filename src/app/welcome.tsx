@@ -12,12 +12,14 @@ const Welcome = () => {
           style={{ width: 250, height: 45 }}
         />
       </View>
+      
+      <View className="gap-6">
+        {/* Login Button */}
+        <Button title="Login"/>
 
-      {/* Login Button */}
-      <Button title="Login"/>
-
-      {/* Criar Conta Button */}
-      <Button title="Criar conta"/>
+        {/* Criar Conta Button */}
+        <Button variant="SECUNDARY" title="Criar conta"/>
+      </View>
     </View>
   );
 };
