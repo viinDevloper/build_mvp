@@ -1,9 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
-
 import { Button } from "../components/button";
 import { Input } from "../components/input";
-
 import LogoGoogle from "../../assets/images/google-logo.svg";
 import LogoApple from "../../assets/images/apple-logo.svg";
 import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
@@ -15,8 +13,7 @@ const SignInScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Registrar usuário
-  const handleRegister = async () => {
+  const handleSignup = async () => {
     try {
       router.dismissAll();
       router.push("/signup");
@@ -28,8 +25,7 @@ const SignInScreen = () => {
       }
     }
   };
-  // Login do usuário
-  const handleLogin = async () => {
+  const handleSignin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -76,7 +72,7 @@ const SignInScreen = () => {
           value={password}
           onChangeText={setPassword}
         />
-        <Button title="Entrar" onPress={handleLogin} />
+        <Button title="Entrar" onPress={handleSignin} />
       </View>
       <View className="w-80 h-12 flex-row justify-around">
         {renderSocialButton(LogoGoogle, "Login com Google")}
@@ -91,7 +87,7 @@ const SignInScreen = () => {
           variant="SECUNDARY"
           title="Ir para o cadastro"
           className="w-80"
-          onPress={handleRegister}
+          onPress={handleSignup}
         />
       </View>
     </View>
