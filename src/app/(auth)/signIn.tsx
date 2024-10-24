@@ -1,30 +1,23 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
-import { Button } from "../components/button";
-import { Input } from "../components/input";
+import { Button } from "../../components/button";
+import { Input } from "../../components/input";
 import LogoGoogle from "../../assets/images/google-logo.svg";
 import LogoApple from "../../assets/images/apple-logo.svg";
 import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
-import { auth } from "../firebase/config";
+import { auth } from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 
-<<<<<<< HEAD
+
 export default function SignIn () {
-  const handleLogin = () => {
-    router.dismissAll();
-    router.push("/(tabs)");
-  };
-=======
-const SignInScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
->>>>>>> fc4a1cb1aca723cf3da07d224099eed1e46eb422
 
   const handleSignup = async () => {
     try {
       router.dismissAll();
-      router.push("/signup");
+      router.push("/(auth)signUp");
     } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);

@@ -1,5 +1,5 @@
 import { View, Image, ScrollView } from "react-native";
-import { Button } from "../components/button";
+import { Button } from "../../components/button";
 
 const Welcome = () => {
   return (

@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "expo-router";
+import { useState } from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button } from "../components/button";
-import { Input } from "../components/input";
+import { Button } from "../../components/button";
+import { Input } from "../../components/input";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { auth } from "../../firebase/config";
 import { router } from "expo-router";
 
-<<<<<<< HEAD
 export default function SignUp () {
-=======
-const SignUpScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -34,7 +30,7 @@ const SignUpScreen = () => {
       }
     }
   };
->>>>>>> fc4a1cb1aca723cf3da07d224099eed1e46eb422
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1 px-6 justify-center items-center">
@@ -80,7 +76,7 @@ const SignUpScreen = () => {
           className="w-80"
           onPress={() => {
             router.dismissAll();
-            router.push("/signin");
+            router.push("/(auth)signIn");
           }}
         />
       </View>

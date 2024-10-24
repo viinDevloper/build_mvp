@@ -5,7 +5,6 @@ import Onboarding2 from '../../assets/Onboarding-2.png'
 import Onboarding3 from '../../assets/Onboarding-3.png'
 import { Button } from '../components/button';
 import { Link } from 'expo-router';
-import { Input } from '../components/input';
 
 interface DataProps {
   image: string;
@@ -120,7 +119,7 @@ const Onboarding = () => {
       {activeBanner !== DATA.length - 1 ?
         <Button onPress={handlePress} variant='PRIMARY' title='Próximo'/>
         :
-        <Link href='/welcome' asChild>
+        <Link href='/(auth)welcome' asChild>
           <Button title='Continuar'/>
         </Link>
       }
