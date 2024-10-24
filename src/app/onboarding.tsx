@@ -3,8 +3,9 @@ import { View, FlatList, Image, Text } from 'react-native';
 import Onboarding1 from '../../assets/Onboarding-1.png'
 import Onboarding2 from '../../assets/Onboarding-2.png'
 import Onboarding3 from '../../assets/Onboarding-3.png'
-import { Button } from '../components/buttom';
+import { Button } from '../components/button';
 import { Link } from 'expo-router';
+import { Input } from '../components/input';
 
 interface DataProps {
   image: string;
@@ -116,7 +117,7 @@ const Onboarding = () => {
         keyExtractor={(item, index) => String(index)}
       />
 
-      {activeBanner !== 2 ?
+      {activeBanner !== DATA.length - 1 ?
         <Button onPress={handlePress} variant='PRIMARY' title='Próximo'/>
         :
         <Link href='/welcome' asChild>

@@ -19,6 +19,9 @@ module.exports = {
         bg100: "#FFFFFF",
         bg200: "#FAFAFA",
         bg300: "#CCCCCC",
+      },
+      placeholderColor: {
+        placeholderColor: "#C4C5C4",
       }
     },
   },
