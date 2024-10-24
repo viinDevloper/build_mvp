@@ -1,22 +1,56 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
-
 import { Button } from "../components/button";
 import { Input } from "../components/input";
-
 import LogoGoogle from "../../assets/images/google-logo.svg";
 import LogoApple from "../../assets/images/apple-logo.svg";
 import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
+import { auth } from "../firebase/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 
+<<<<<<< HEAD
 export default function SignIn () {
   const handleLogin = () => {
     router.dismissAll();
     router.push("/(tabs)");
   };
+=======
+const SignInScreen = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+>>>>>>> fc4a1cb1aca723cf3da07d224099eed1e46eb422
 
-  const handleSignup = () => {
-    router.dismissAll();
-    router.push("/signup");
+  const handleSignup = async () => {
+    try {
+      router.dismissAll();
+      router.push("/signup");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+    }
+  };
+  const handleSignin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log(`Logado como: ${user.email}`);
+      router.dismissAll();
+      router.push("/(tabs)");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+    }
   };
 
   const renderSocialButton = (Logo: React.FC<any>, altText: string) => (
@@ -27,7 +61,7 @@ export default function SignIn () {
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5, // Para Android
+        elevation: 5,
       }}
       accessibilityLabel={altText}
     >
@@ -39,9 +73,14 @@ export default function SignIn () {
     <View className="flex-1 bg-bg100 justify-around items-center">
       <Text className="text-3xl font-bold">B2Y 2 You</Text>
       <View className="w-80">
-        <Input placeholder="Seu nome" />
-        <Input placeholder="Sua senha" secureTextEntry={true} />
-        <Button title="Entrar" onPress={handleLogin} />
+        <Input placeholder="Seu E-mail" value={email} onChangeText={setEmail} />
+        <Input
+          placeholder="Sua senha"
+          secureTextEntry={true}
+          value={password}
+          onChangeText={setPassword}
+        />
+        <Button title="Entrar" onPress={handleSignin} />
       </View>
       <View className="w-80 h-12 flex-row justify-around">
         {renderSocialButton(LogoGoogle, "Login com Google")}
