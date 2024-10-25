@@ -2,9 +2,9 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
-import LogoGoogle from "../../assets/images/google-logo.svg";
-import LogoApple from "../../assets/images/apple-logo.svg";
-import LogoLinkedin from "../../assets/images/linkedin-logo.svg";
+import LogoGoogle from "../../../assets/images/google-logo.svg";
+import LogoApple from "../../../assets/images/apple-logo.svg";
+import LogoLinkedin from "../../../assets/images/linkedin-logo.svg";
 import { auth } from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function SignIn () {
   const handleSignup = async () => {
     try {
       router.dismissAll();
-      router.push("/(auth)signUp");
+      router.push("/(auth)/signUp");
     } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);
@@ -37,6 +37,8 @@ export default function SignIn () {
       console.log(`Logado como: ${user.email}`);
       router.dismissAll();
       router.push("/(tabs)");
+      setEmail('');
+      setPassword('');
     } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);

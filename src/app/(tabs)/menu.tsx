@@ -12,7 +12,7 @@ const ProfileScreen = (props: Props) => {
     try {
       await signOut(auth);
       console.log("Desconectado com sucesso");
-      router.push("/signin");
+      router.push("/(auth)/signIn");
     } catch (error) {
       console.error("Erro ao fazer logout:", error);
       console.log("Erro ao desconectar");

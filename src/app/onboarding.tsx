@@ -119,7 +119,7 @@ const Onboarding = () => {
       {activeBanner !== DATA.length - 1 ?
         <Button onPress={handlePress} variant='PRIMARY' title='Próximo'/>
         :
-        <Link href='/(auth)welcome' asChild>
+        <Link href='/(auth)/welcome' asChild>
           <Button title='Continuar'/>
         </Link>
       }

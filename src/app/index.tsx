@@ -11,22 +11,22 @@ export default function App (props: Props)  {
         <Text className="text-2xl">Screen Onboarding</Text>
       </Link>
 
-      <Link href={"/"}>
+      <Link href={"/(auth)/signIn"}>
         <Text className="text-2xl">Screen login</Text>
       </Link>
 
-      <Link href={"/(auth)signUp"}>
+      <Link href={"/(auth)/signUp"}>
         <Text className="text-2xl">Screen Cadastro</Text>
       </Link>
 
-      <Link href={"/(auth)welcome"}>
+      <Link href={"/(auth)/welcome"}>
         <Text className="text-2xl">Screen Bem vindos</Text>
       </Link>
 
       <Link href={"/(tabs)"}>
         <Text className="text-2xl"> Screen Home</Text>
       </Link>
-      <Link href={"/(tabs)localization"}>
+      <Link href={"/(tabs)/localization"}>
         <Text className="text-2xl">Screen Localization</Text>
       </Link>
 
