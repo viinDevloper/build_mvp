@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { router } from "expo-router";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
@@ -66,7 +66,10 @@ export default function SignIn () {
 
   return (
     <View className="flex-1 bg-bg100 justify-around items-center">
-      <Text className="text-3xl font-bold">B2Y 2 You</Text>
+      <Image
+            source={require("../../assets/b2Y.jpg")}
+            style={{ width: 250, height: 45 }}
+          />
       <View className="w-80">
         <Input placeholder="Seu E-mail" value={email} onChangeText={setEmail} />
         <Input
